@@ -1,7 +1,6 @@
 import { Navigate, useRoutes } from "react-router-dom"
 import BasicLayout from './layout/BasicLayout';
-import Home from './pages/Home';
-
+import Home from './pages/Home/Home';
 const CustomRouter = () => {
   return useRoutes([
     {

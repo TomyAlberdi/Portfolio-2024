@@ -1,5 +1,30 @@
 @use "./var";
 
+@font-face {
+  font-family: 'BebasNeue-Regular';
+  src: url('./assets/fonts/BebasNeue/BebasNeue-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'PPNeueMontreal-Thin';
+  src: url('./assets/fonts/NeueMontreal/PPNeueMontreal-Thin.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'PPNeueMontreal-Book';
+  src: url('./assets/fonts/NeueMontreal/PPNeueMontreal-Book.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'PPNeueMontrel-Bold';
+  src: url('./assets/fonts/NeueMontreal/PPNeueMontreal-Bold.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'PPNeueMontreal-SemiBolditalic';
+  src: url('./assets/fonts/NeueMontreal/PPNeueMontreal-SemiBolditalic.otf') format('truetype');
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
