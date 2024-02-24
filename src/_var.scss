@@ -1,0 +1,14 @@
+$text: #e8ede8;
+$background-back: #0d020d;
+$background-front: #141215;
+$secondary: #8a1631;
+$accent: #dd385f;
+
+$shadow: 0px 6px 6px 0px rgb(0, 0, 0, 0.4);
+
+@mixin flex-container($direction, $space, $items) {
+  display: flex;
+  align-items: $items;
+  flex-direction: $direction;
+  justify-content: $space;
+}
