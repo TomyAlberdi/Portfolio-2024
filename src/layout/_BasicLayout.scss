@@ -1,0 +1,18 @@
+@use "../var";
+
+div.Layout {
+  @include var.flex-container(row, space-between, start);
+  width: 100%;
+  height: 100%;
+  background-color: var.$background-front;
+  border: thin solid var.$text;
+  div.RightPanel {
+    padding: 1%;
+    height: 100%;
+    width: 80%;
+    overflow: scroll;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+  }
+}
