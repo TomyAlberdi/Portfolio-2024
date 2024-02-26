@@ -1,5 +1,7 @@
 @use "./var";
+@use "./layout/BasicLayout";
 @use "./pages/Home/Home";
+@use "./components/Navbar/Navbar";
 
 @font-face {
   font-family: 'BebasNeue-Regular';
@@ -39,11 +41,4 @@ div.App {
   padding: 1.5%;
   background-color: var.$background-back;
   color: var.$text;
-  div.Layout {
-    width: 100%;
-    height: 100%;
-    background-color: var.$background-front;
-    border: thin solid var.$text;
-    padding: 1%;
-  }
 }
