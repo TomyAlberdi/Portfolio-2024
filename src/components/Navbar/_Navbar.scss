@@ -1,8 +1,58 @@
 @use "../../var";
 
 div.Navbar {
-  border: 1px solid red;
+  @include var.flex-container(column, left, start);
+  gap: 2%;
   padding: 1%;
   width: 20%;
   height: 100%;
+  section.header {
+    @include var.flex-container(row, left, center);
+    text-align: center;
+    img {
+      width: 25%;
+      margin-right: 10%;
+    }
+    h2 {
+      font-weight: 500;
+    }
+    h4 {
+      font-weight: 200;
+    }
+  }
+  nav {
+    width: 100%;
+    @include var.flex-container(column, left, start);
+    padding: 5% 5% 5% 10%;
+    a {
+      color: var.$text;
+      text-decoration: none;
+      padding: 5% 5% 5% 0;
+      width: 100%;
+      font-size: 1.3rem;
+      display: inline-block;
+      &.active {
+        &::after {
+          content: "";
+          display: block;
+          width: 100%;
+          height: 4px;
+          background: var.$accent;
+          transition: all 0.25s ease-in-out;
+        }
+      }
+      &::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 4px;
+        background: var.$accent;
+        transition: all 0.25s ease-in-out;
+      }
+      &:hover::after {
+        width: 100%;
+        transition: all 0.25s ease-in-out;
+      }
+    }
+  }
 }

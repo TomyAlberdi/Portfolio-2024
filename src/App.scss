@@ -3,29 +3,11 @@
 @use "./pages/Home/Home";
 @use "./components/Navbar/Navbar";
 
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@200;300;400;500;700&display=swap');
+
 @font-face {
   font-family: 'BebasNeue-Regular';
   src: url('./assets/fonts/BebasNeue/BebasNeue-Regular.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'PPNeueMontreal-Thin';
-  src: url('./assets/fonts/NeueMontreal/PPNeueMontreal-Thin.otf') format('truetype');
-}
-
-@font-face {
-  font-family: 'PPNeueMontreal-Book';
-  src: url('./assets/fonts/NeueMontreal/PPNeueMontreal-Book.otf') format('truetype');
-}
-
-@font-face {
-  font-family: 'PPNeueMontrel-Bold';
-  src: url('./assets/fonts/NeueMontreal/PPNeueMontreal-Bold.otf') format('truetype');
-}
-
-@font-face {
-  font-family: 'PPNeueMontreal-SemiBolditalic';
-  src: url('./assets/fonts/NeueMontreal/PPNeueMontreal-SemiBolditalic.otf') format('truetype');
 }
 
 * {
@@ -41,4 +23,5 @@ div.App {
   padding: 1.5%;
   background-color: var.$background-back;
   color: var.$text;
+  font-family: 'Be Vietnam Pro', sans-serif;
 }
