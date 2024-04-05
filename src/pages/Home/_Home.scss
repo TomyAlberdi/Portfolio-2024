@@ -1,81 +1,141 @@
 @use "../../var";
 
 div.Home {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-  row-gap: 2vh;
-  column-gap: 2vh;
-  font-size: 1.2rem;
-  p {
-    padding: 1rem;
+  @include var.flex-container(column, flex-start, flex-start);
+  gap: 3%;
+  font-size: 1.15em;
+  section {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
     border-radius: 10px;
     box-shadow: var.$shadow;
-    background-color: rgba(0, 0, 0, 0.3);
-    transition: 0.3s all ease-in-out;
-    &:hover {
-      transition: 0.3s all ease-in-out;
-      transform: translateY(-2%);
-    }
-    ul {
-      padding: 0.25rem 0 0 1rem;
-      li {
-        padding: 0.1rem 0;
+    position: relative;
+    div {
+      position: absolute;
+      height: 100%;
+      &.year {
+        width: 20%;
+        @include var.flex-container(row, center, center);
+        transition: all 0.3s ease-in-out;
       }
-    }
-    span,
-    a {
-      color: var.$accent;
-      text-decoration: none;
-    }
-    &.border {
-      border: 1px solid var.$accent;
-    }
-    &.div1 {
-      grid-area: 1 / 1 / 4 / 3;
-      border-bottom-right-radius: 0;
-    }
-    &.div2 {
-      grid-area: 1 / 3 / 3 / 6;
-      font-size: 1.1rem;
-      border-bottom-left-radius: 0;
-    }
-    &.div3 {
-      grid-area: 3 / 4 / 6 / 6;
-      font-size: 1.2rem;
-      border-top-left-radius: 0;
-      ul li {
-        padding: 0.5rem 0;
-      }
-    }
-    &.div4 {
-      grid-area: 4 / 1 / 6 / 4;
-      border-top-right-radius: 0;
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        svg {
-          width: 90%;
-          height: 90%;
-          &.div1 { grid-area: 1 / 1 / 2 / 2; }
-          &.div2 { grid-area: 1 / 2 / 2 / 3; }
-          &.div3 { grid-area: 1 / 3 / 2 / 4; }
-          &.div4 { grid-area: 1 / 4 / 2 / 5; }
-          &.div5 { grid-area: 1 / 5 / 2 / 6; }
-          &.div6 { grid-area: 1 / 6 / 2 / 7; }
-          &.div7 { grid-area: 2 / 1 / 3 / 2; }
-          &.div8 { grid-area: 2 / 2 / 3 / 3; }
-          &.div9 { grid-area: 2 / 3 / 3 / 4; }
-          &.div10 { grid-area: 2 / 4 / 3 / 5; }
-          &.div11 { grid-area: 2 / 5 / 3 / 6; }
-          &.div12 { grid-area: 2 / 6 / 3 / 7; } 
+      &.stack {
+        width: 25%;
+        border: 1px solid var.$text;
+        transition: all 0.3s ease-in-out;
+        visibility: hidden;
+        opacity: 0;
+        @include var.flex-container(row, unset, center);
+        span {
+          @include var.flex-container(row, center, center);
+          flex-wrap: wrap;
+          gap: 5%;
+          width: 80%;
+          height: 100%;
+          padding: 5%;
+          svg {
+            width: 3em;
+            height: 3em;
+            color: var.$text;
+          }
         }
       }
-  }
-  img {
-    &.div5 {
-      grid-area: 3 / 3 / 4 / 4;
-      width: 100%;
+      &.text {
+        box-shadow: var.$shadow-left;
+        min-height: 10vh;
+        width: 80%;
+        padding: 1em;
+        border-radius: 10px;
+        border: 2px solid var.$accent;
+        ul {
+          padding: 0.25em 0 0 1em;
+          li {
+            padding: 0.1em 0;
+          }
+        }
+        span,
+        a {
+          color: var.$accent;
+          text-decoration: none;
+        }
+      }
+      // Hacky but it works 👍
+      &.textHidden {
+        min-height: 12vh;
+        position: unset;
+        visibility: hidden;
+        padding: 1em;
+        ul {
+          padding: 0.25em 0 0 1em;
+          li {
+            padding: 0.1em 0;
+          }
+        }
+      }
+    }
+    &:nth-child(odd) {
+      div {
+        &.year {
+          right: 0;
+        }
+        &.stack {
+          right: 20%;
+          border-left: none;
+          justify-content: right;
+          border-radius: 0px 10px 10px 0px;
+          span {
+            border-radius: 0px 10px 10px 0px;
+          }
+        }
+        &.text {
+          left: 0;
+        }
+      }
+    }
+    &:nth-child(even) {
+      div {
+        &.year {
+          left: 0;
+        }
+        &.stack {
+          left: 20%;
+          border-radius: 10px 0px 0px 10px;
+          border-right: none;
+          justify-content: left;
+          span {
+            border-radius: 10px 0px 0px 10px;
+          }
+        }
+        &.text {
+          right: 0;
+        }
+      }
+    }
+    &:hover {
+      div.stack {
+        visibility: visible;
+        opacity: 1;
+      }
+      div.year {
+        transition: all 0.3s ease-in-out;
+        opacity: 0;
+        visibility: hidden;
+      }
+      &:nth-child(odd) {
+        div {
+          &.stack {
+            transition: all 0.3s ease-in-out;
+            right: 0%;
+          }
+        }
+      }
+      &:nth-child(even) {
+        div {
+          &.stack {
+            transition: all 0.3s ease-in-out;
+            left: 0%;
+          }
+        }
+      }
     }
   }
 }
