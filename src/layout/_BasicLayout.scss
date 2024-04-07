@@ -11,8 +11,22 @@ div.Layout {
     height: 100%;
     width: 80%;
     overflow: scroll;
+    animation: fade-in 2s;
     &::-webkit-scrollbar {
         display: none;
     }
+    h1.title {
+      font-size: 4rem;
+      font-family: 'BebasNeue-Regular';
+    }
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
   }
 }

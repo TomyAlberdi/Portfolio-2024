@@ -1,7 +1,141 @@
 @use "../../var";
 
 div.Home {
-  h1 {
-    font-family: 'BebasNeue-Regular';
+  @include var.flex-container(column, flex-start, flex-start);
+  gap: 3%;
+  font-size: 1.15em;
+  section {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    box-shadow: var.$shadow;
+    position: relative;
+    div {
+      position: absolute;
+      height: 100%;
+      &.year {
+        width: 20%;
+        @include var.flex-container(row, center, center);
+        transition: all 0.3s ease-in-out;
+      }
+      &.stack {
+        width: 25%;
+        border: 1px solid var.$text;
+        transition: all 0.3s ease-in-out;
+        visibility: hidden;
+        opacity: 0;
+        @include var.flex-container(row, unset, center);
+        span {
+          @include var.flex-container(row, center, center);
+          flex-wrap: wrap;
+          gap: 5%;
+          width: 80%;
+          height: 100%;
+          padding: 5%;
+          svg {
+            width: 3em;
+            height: 3em;
+            color: var.$text;
+          }
+        }
+      }
+      &.text {
+        box-shadow: var.$shadow-left;
+        min-height: 10vh;
+        width: 80%;
+        padding: 1em;
+        border-radius: 10px;
+        border: 2px solid var.$accent;
+        ul {
+          padding: 0.25em 0 0 1em;
+          li {
+            padding: 0.1em 0;
+          }
+        }
+        span,
+        a {
+          color: var.$accent;
+          text-decoration: none;
+        }
+      }
+      // Hacky but it works 👍
+      &.textHidden {
+        min-height: 12vh;
+        position: unset;
+        visibility: hidden;
+        padding: 1em;
+        ul {
+          padding: 0.25em 0 0 1em;
+          li {
+            padding: 0.1em 0;
+          }
+        }
+      }
+    }
+    &:nth-child(odd) {
+      div {
+        &.year {
+          right: 0;
+        }
+        &.stack {
+          right: 20%;
+          border-left: none;
+          justify-content: right;
+          border-radius: 0px 10px 10px 0px;
+          span {
+            border-radius: 0px 10px 10px 0px;
+          }
+        }
+        &.text {
+          left: 0;
+        }
+      }
+    }
+    &:nth-child(even) {
+      div {
+        &.year {
+          left: 0;
+        }
+        &.stack {
+          left: 20%;
+          border-radius: 10px 0px 0px 10px;
+          border-right: none;
+          justify-content: left;
+          span {
+            border-radius: 10px 0px 0px 10px;
+          }
+        }
+        &.text {
+          right: 0;
+        }
+      }
+    }
+    &:hover {
+      div.stack {
+        visibility: visible;
+        opacity: 1;
+      }
+      div.year {
+        transition: all 0.3s ease-in-out;
+        opacity: 0;
+        visibility: hidden;
+      }
+      &:nth-child(odd) {
+        div {
+          &.stack {
+            transition: all 0.3s ease-in-out;
+            right: 0%;
+          }
+        }
+      }
+      &:nth-child(even) {
+        div {
+          &.stack {
+            transition: all 0.3s ease-in-out;
+            left: 0%;
+          }
+        }
+      }
+    }
   }
 }
