@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <div className="RightPanel Home">
       <section>
-        <div className="year">2020 - 2023</div>
+        <div className="year">2020 - 2022</div>
         <div className="stack">
           <span>
             <FaJava className="div2" />
@@ -30,7 +30,7 @@ const Home = () => {
         </div>
       </section>
       <section>
-        <div className="year">2023</div>
+        <div className="year">2022 - 2023</div>
         <div className="stack">
           <span>
             <IoLogoJavascript className="div3" />
@@ -50,7 +50,7 @@ const Home = () => {
             Certified Tech Developer
           </Link>
           , a degree backed by Globant and Mercado Libre. <br />
-          Thanks to this, I developed knowledge in the following fields:
+          Thanks to this, I obtained knowledge in the following fields:
           <ul>
             <li>
               <span>FrontEnd</span> Development
@@ -93,7 +93,7 @@ const Home = () => {
         </div>
       </section>
       <section>
-        <div className="year">2024</div>
+        <div className="year">2023 - 2024</div>
         <div className="stack">
           <span>
             <FaReact className="div1" />
