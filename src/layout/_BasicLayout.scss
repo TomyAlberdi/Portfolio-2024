@@ -7,9 +7,8 @@ div.Layout {
   background-color: var.$background-front;
   border: thin solid var.$text;
   div.RightPanel {
-    padding: 1%;
     height: 100%;
-    width: 80%;
+    min-width: 60%;
     overflow: scroll;
     animation: fade-in 2s;
     &::-webkit-scrollbar {
