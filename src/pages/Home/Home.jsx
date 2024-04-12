@@ -1,6 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaReact, FaJava, FaHtml5, FaCss3, FaSass, FaGitAlt } from "react-icons/fa";
+import {
+  FaReact,
+  FaJava,
+  FaHtml5,
+  FaCss3,
+  FaSass,
+  FaGitAlt,
+} from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
 import { GoFileBinary } from "react-icons/go";
 import { FaGolang } from "react-icons/fa6";
@@ -75,7 +82,7 @@ const Home = () => {
             Certified Tech Developer
           </Link>
           , a degree backed by Globant and Mercado Libre. <br />
-          Thanks to this, I developed knowledge in the following fields:
+          Thanks to this, I obtained knowledge in the following fields:
           <ul>
             <li>
               <span>FrontEnd</span> Development
