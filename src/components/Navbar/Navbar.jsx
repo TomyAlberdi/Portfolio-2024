@@ -13,8 +13,8 @@ const Navbar = () => {
       </section>
       <nav>
         <NavLink className={({ isActive }) => (isActive ? "active" : "")} to={"/"}>Home</NavLink>
-        <NavLink className={({ isActive }) => (isActive ? "active" : "")} to={"/Projects"}>Projects</NavLink>
         <NavLink className={({ isActive }) => (isActive ? "active" : "")} to={"/Experience"}>Experience</NavLink>
+        <NavLink className={({ isActive }) => (isActive ? "active" : "")} to={"/Projects"}>Projects</NavLink>
         <NavLink className={({ isActive }) => (isActive ? "active" : "")} to={"/Contact"}>Contact</NavLink>
       </nav>
     </div>
