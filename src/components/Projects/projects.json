@@ -1,0 +1,65 @@
+[
+    {
+        "año":"2023",
+        "nombre_english":"Coin: Expense Tracking",
+        "nombre_spanish":"Coin: Seguimiento de gastos",
+        "icons":[
+            "fa-brands fa-java",
+            "fa-brands fa-docker"
+        ],
+        "link":"https://github.com/TomyAlberdi/Coin-Backend"
+    },
+    {
+        "año":"2023",
+        "nombre_english":"Weather App",
+        "nombre_spanish":"App del Clima",
+        "icons":[
+            "fa-brands fa-react",
+            "fa-brands fa-sass"
+        ],
+        "link":"https://tomyalberdi.github.io/Weather-App/"
+    },
+    {
+        "año":"2023",
+        "nombre_english":"Favorite Albums Dashboard",
+        "nombre_spanish":"Panel de Álbumes Favoritos",
+        "icons":[
+            "fa-brands fa-react",
+            "fa-brands fa-sass"
+        ],
+        "link":"https://tomyalberdi.github.io/Albums-Dashboard/"
+    },
+    {
+        "año":"2022",
+        "nombre_english":"To-Do List with Themes",
+        "nombre_spanish":"Lista To-Do con Temas",
+        "icons":[
+            "fa-brands fa-html5",
+            "fa-brands fa-sass",
+            "fa-brands fa-js"
+        ],
+        "link":"https://tomyalberdi.github.io/ToDo-App/"
+    },
+    {
+        "año":"2022",
+        "nombre_english":"Time Tracking Dashboard",
+        "nombre_spanish":"Panel de Tiempo",
+        "icons":[
+            "fa-brands fa-html5",
+            "fa-brands fa-sass",
+            "fa-brands fa-js"
+        ],
+        "link":"https://tomyalberdi.github.io/Time-Tracking-Dashboard/"
+    },
+    {
+        "año":"2022",
+        "nombre_english":"Card Details",
+        "nombre_spanish":"Detalles de Tarjeta",
+        "icons":[
+            "fa-brands fa-html5",
+            "fa-brands fa-sass",
+            "fa-brands fa-js"
+        ],
+        "link":"https://tomyalberdi.github.io/Interactive-Card-Details-Form/"
+    }
+]

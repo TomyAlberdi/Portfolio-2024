@@ -1,0 +1,83 @@
+@use "../../var";
+
+div.Projects {
+  @include var.flex-container(row, flex-end, unset);
+  padding: 50vh 7vh 7vh 7vh;
+  overflow: scroll;
+  scroll-behavior: smooth;
+  ul {
+    list-style-type: none;
+    width: 100%;
+    li {
+      a {
+        text-decoration: none;
+        @include var.flex-container(row, right, baseline);
+        gap: 1.5vw;
+        padding: 4vh 0;
+        color: var.$text;
+        span.date {
+          font-weight: bold;
+        }
+        span.nombre {
+          font-size: 3.9rem;
+          font-weight: lighter;
+          color: var.$accent;
+        }
+        div.icons {
+          @include var.flex-container(row, center, center);
+          gap: 0.5vw;
+          font-size: 1.5rem;
+        }
+        cursor: pointer;
+        transition: all 0.3s ease-out;
+        &:hover {
+          transform: translateX(-3vw);
+          transition: all 0.3s ease-out;
+        }
+      }
+    }
+  }
+  /* Query Mobile */
+  @media (width <= 765px) {
+    padding: 25vh 3vh 3vh 3vh;
+    ul {
+      width: 100%;
+      li {
+        a {
+          flex-direction: column;
+          padding: 4vh 0;
+          span.nombre {
+            font-size: 2.25rem;
+          }
+          div.icons {
+            gap: 2.5vw;
+          }
+          -webkit-tap-highlight-color: transparent;
+          &:hover {
+            transform: translateX(3vw);
+            transition: all 0.3s ease-out;
+          }
+        }
+      }
+    }
+  }
+  @media ((min-width >= 766px) and (max-width <= 1023px)) {
+    padding: 25vh 3vh 3vh 3vh;
+    ul {
+      width: 100%;
+      li {
+        a {
+          padding: 2vh 0;
+          span.nombre {
+            font-size: 2.75rem;
+          }
+          -webkit-tap-highlight-color: transparent;
+          &:hover {
+            transform: translateX(3vw);
+            transition: all 0.3s ease-out;
+          }
+        }
+      }
+    }
+  }
+}
