@@ -1,58 +1,74 @@
 @use "../../var";
 
 div.Navbar {
-  @include var.flex-container(column, left, start);
+  @include var.flex-container(column, space-between, start);
   gap: 2%;
   padding: 1%;
   width: 20%;
   height: 100%;
-  section.header {
-    @include var.flex-container(row, left, center);
-    text-align: center;
-    img {
-      width: 25%;
-      margin-right: 10%;
+  section.top {
+    section.header {
+      @include var.flex-container(row, left, center);
+      text-align: center;
+      img {
+        width: 25%;
+        margin-right: 10%;
+      }
+      h2 {
+        font-weight: 500;
+      }
+      h4 {
+        font-weight: 200;
+      }
     }
-    h2 {
-      font-weight: 500;
-    }
-    h4 {
-      font-weight: 200;
-    }
-  }
-  nav {
-    width: 100%;
-    @include var.flex-container(column, left, start);
-    padding: 5% 5% 5% 10%;
-    a {
-      color: var.$text;
-      text-decoration: none;
-      padding: 5% 5% 5% 0;
+    nav {
       width: 100%;
-      font-size: 1.3rem;
-      display: inline-block;
-      &.active {
+      @include var.flex-container(column, left, start);
+      padding: 5% 5% 5% 10%;
+      a {
+        color: var.$text;
+        text-decoration: none;
+        padding: 5% 5% 5% 0;
+        width: 100%;
+        font-size: 1.3rem;
+        display: inline-block;
+        &.active {
+          &::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 4px;
+            background: var.$accent;
+            transition: all 0.25s ease-in-out;
+          }
+        }
         &::after {
           content: "";
           display: block;
-          width: 100%;
+          width: 0;
           height: 4px;
           background: var.$accent;
           transition: all 0.25s ease-in-out;
         }
+        &:hover::after {
+          width: 100%;
+          transition: all 0.25s ease-in-out;
+        }
       }
-      &::after {
-        content: "";
-        display: block;
-        width: 0;
-        height: 4px;
-        background: var.$accent;
-        transition: all 0.25s ease-in-out;
-      }
-      &:hover::after {
-        width: 100%;
-        transition: all 0.25s ease-in-out;
-      }
+    }
+  }
+  section.bot {
+    padding: 1rem;
+    border-radius: 5px;
+    gap: 1rem;
+    background-color: rgba(255,255,255,0.1);
+    font-size: 1.3em;
+    @include var.flex-container(row, flex-start, center);
+    cursor: pointer;
+    svg, img {
+      border-radius: 100px;
+      width: 36px;
+      height: 36px;
     }
   }
 }
