@@ -1,13 +1,14 @@
-import React from 'react'
+import React from "react";
 import list from "./experience.json";
+import { useHorizontalScroll } from "./../../hooks/HorizontalScroll";
 
 const Experience = () => {
-
+  const scrollRef = useHorizontalScroll();
   return (
-    <div className='Experience RightPanel '>
-      
-    </div>
-  )
-}
+    <div className="RightPanel Experience " ref={scrollRef}>
 
-export default Experience
+    </div>
+  );
+};
+
+export default Experience;

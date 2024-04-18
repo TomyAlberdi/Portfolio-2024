@@ -9,8 +9,7 @@ export function useHorizontalScroll() {
         if (e.deltaY == 0) return;
         e.preventDefault();
         el.scrollTo({
-          left: el.scrollLeft + e.deltaY,
-          behavior: "smooth"
+          left: el.scrollLeft + e.deltaY
         });
       };
       el.addEventListener("wheel", onWheel);
