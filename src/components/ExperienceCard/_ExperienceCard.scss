@@ -3,15 +3,16 @@
 div.ExperienceCard {
   width: 35%;
   border-radius: 5px;
-  padding: 0 1%;
   flex-shrink: 0;
   box-shadow: 1px 7px 15px 6px rgba(0, 0, 0, 0.56);
   height: 70%;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(2, 0.75fr) 3fr 2fr 1.5fr;
+  grid-template-rows: 0.75fr 0.5fr 3fr 2fr 1.5fr;
   position: relative;
   section {
+    padding: 0 2.5%;
+    //border: 1px solid red;
     &.div1 {
       grid-area: 1 / 1 / 2 / 2;
     }
@@ -68,6 +69,20 @@ div.ExperienceCard {
             }
           }
         }
+      }
+    }
+    &.position {
+      background-color: rgba(0,0,0,0.5);
+      font-size: 18px;
+      font-weight: 300;
+      @include var.flex-container(row,flex-start,center);
+    }
+    &.description {
+      padding: 2.5%;
+      font-weight: 300;
+      border: 1px solid red;
+      div {
+        border: 1px solid green;
       }
     }
   }
