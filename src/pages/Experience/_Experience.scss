@@ -1,7 +1,8 @@
 @use "../../var";
 
 div.Experience {
-  border: 1px solid red;
-  white-space: nowrap;
   width: 80%;
+  overflow-x: scroll;
+  @include var.flex-container(row, flex-start, center);
+  gap: 2.5%;
 }
