@@ -72,17 +72,40 @@ div.ExperienceCard {
       }
     }
     &.position {
-      background-color: rgba(0,0,0,0.5);
+      background-color: rgba(0, 0, 0, 0.5);
       font-size: 18px;
       font-weight: 300;
-      @include var.flex-container(row,flex-start,center);
+      @include var.flex-container(row, flex-start, center);
     }
     &.description {
-      padding: 2.5%;
       font-weight: 300;
-      border: 1px solid red;
+      padding: 0;
       div {
-        border: 1px solid green;
+        &.description {
+          height: 70%;
+          padding: 2.5%;
+        }
+        &.images {
+          height: 30%;
+          @include var.flex-container(row, center, center);
+          background-color: rgba(0, 0, 0, 0.5);
+          button {
+            width: 50%;
+            height: 5vh;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.25em;
+            box-shadow: 1px 3px 5px 3px rgba(0, 0, 0, 0.56);
+            cursor: pointer;
+            background-color: var.$secondary;
+            color: var.$text;
+            transition: all 0.25s ease-in-out;
+            &:hover {
+              background-color: #a01f3d;
+              transition: all 0.25s ease-in-out;
+            }
+          }
+        }
       }
     }
   }

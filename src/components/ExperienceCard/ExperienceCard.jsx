@@ -13,7 +13,7 @@ const ExperienceCard = ({ data }) => {
     <div className="ExperienceCard" style={{ backgroundColor: bkgColor }}>
       <CardTitle name={en ? data.name_en : data.name_es} year={data.year} wip={data.wip} accentColor={accentColor} />
       <section className="position div2">{en ? data.role_en : data.role_es}</section>
-      <CardDescriptionImages description={en ? data.description_en : data.description_es} images={[]} />
+      <CardDescriptionImages description={en ? data.description_en : data.description_es} images={data.images} accentColor={accentColor} />
       <section className="stack div4"></section>
       <section className="link div5"></section>
     </div>
