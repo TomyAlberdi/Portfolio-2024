@@ -10,7 +10,9 @@ export const resources = {
       // Home
       // Experience
       ExperienceCardWipInfo: "WIP stands for 'Work in Progress'. This means that this project isn't finished.",
-      ExperienceCardViewImages: "See images",
+      ExperienceCardViewImages: "Screenshots",
+      ExperienceCardVisit: "View",
+      ExperienceCardButtonDisabled: "Deploy not available",
       // Projects
       // Contact
     },
@@ -27,6 +29,8 @@ export const resources = {
       // Experience
       ExperienceCardWipInfo: "WIP significa 'Trabajo en Progreso' en inglés. Esto quiere decir que este proyecto no está terminado.",
       ExperienceCardViewImages: "Ver imágenes",
+      ExperienceCardVisit: "Visitar",
+      ExperienceCardButtonDisabled: "Página no disponible",
       // Projects
       // Contact
     },

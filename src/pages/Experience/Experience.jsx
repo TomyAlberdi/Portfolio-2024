@@ -10,11 +10,6 @@ const Experience = () => {
       {list.map((item, index) => {
         return <ExperienceCard key={index} data={item} />;
       })}
-      <ExperienceCard data={list[0]} />
-      <ExperienceCard data={list[0]} />
-      <ExperienceCard data={list[0]} />
-      <ExperienceCard data={list[0]} />
-      <ExperienceCard data={list[0]} />
     </div>
   );
 };
