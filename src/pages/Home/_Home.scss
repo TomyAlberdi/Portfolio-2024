@@ -4,8 +4,8 @@ div.Home {
   @include var.flex-container(column, flex-start, flex-start);
   gap: 3%;
   font-size: 1.15em;
-  padding: 1%;
-  width: 76%;
+  padding-right: 1.5em;
+  width: 75%;
   section {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.3);

@@ -5,10 +5,10 @@ div.Layout {
   width: 100vw;
   height: 100vh;
   backdrop-filter: blur(50px);
-  padding: 1.5%;
+  padding: 1.5em 0 1.5em 1.5em;
   div.RightPanel {
     height: 100%;
-    min-width: 60%;
+    max-width: 80%;
     overflow: scroll;
     animation: fade-in 2s;
     &::-webkit-scrollbar {
