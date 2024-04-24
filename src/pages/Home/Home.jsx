@@ -1,167 +1,113 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import {
-  FaReact,
-  FaJava,
-  FaHtml5,
-  FaCss3,
-  FaSass,
-  FaGitAlt,
-} from "react-icons/fa";
-import { IoLogoJavascript } from "react-icons/io5";
-import { GoFileBinary } from "react-icons/go";
-import { FaGolang } from "react-icons/fa6";
+import ReactCardFlip from "react-card-flip";
+import { useTranslation } from "react-i18next";
+import TextTransition, { presets } from "react-text-transition";
 
 const Home = () => {
+  const { t, i18n } = useTranslation();
+
+  const [index, setIndex] = useState(0);
+  const [index1, setIndex1] = useState(0);
+  const [index2, setIndex2] = useState(0);
+  const [index3, setIndex3] = useState(0);
+  const [index4, setIndex4] = useState(0);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => setIndex((index) => index + 1), 4000);
+    const intervalIcon1 = setInterval(
+      () => setIndex1((index1) => index1 + 1),
+      4000
+    );
+    const intervalIcon2 = setInterval(
+      () => setIndex2((index2) => index2 + 1),
+      4000
+    );
+    const intervalIcon3 = setInterval(
+      () => setIndex3((index3) => index3 + 1),
+      4000
+    );
+    const intervalIcon4 = setInterval(
+      () => setIndex4((index4) => index4 + 1),
+      4000
+    );
+    return () =>
+      clearTimeout(
+        intervalId,
+        intervalIcon1,
+        intervalIcon2,
+        intervalIcon3,
+        intervalIcon4
+      );
+  }, []);
+
+  const texts_en = [
+    "Frontend Developer",
+    "Backend Developer",
+    "Database Administrator",
+  ];
+  const texts_es = [
+    "Desarrollador Frontend",
+    "Desarrollador Backend",
+    "Administrador de BBDD",
+  ];
+
+  const icons_1 = [
+    <i class="fa-brands fa-react"></i>,
+    <i class="fa-solid fa-database"></i>,
+    <i class="fa-brands fa-java"></i>,
+  ];
+  const icons_2 = [
+    <i class="fa-brands fa-js"></i>,
+    <i class="fa-brands fa-docker"></i>,
+    <i class="fa-brands fa-golang"></i>,
+  ];
+  const icons_3 = [
+    <i class="fa-brands fa-sass"></i>,
+    <i class="fa-solid fa-code-compare"></i>,
+    <i class="fa-solid fa-circle-nodes"></i>,
+  ];
+  const icons_4 = [
+    <i class="fa-brands fa-html5"></i>,
+    <i class="fa-solid fa-file-lines"></i>,
+    <i class="fa-solid fa-lock"></i>,
+  ];
+
   return (
     <div className="RightPanel Home">
-      <section>
-        <div className="year">2020 - 2022</div>
-        <div className="stack">
-          <span>
-            <FaJava className="div2" />
-            <GoFileBinary />
-          </span>
+      <section className="div1">
+        <div>
+          <img src="public/favicon.ico" />
+          omás
         </div>
-        <div className="text">
-          Studied a <span>bachelor's degree </span>in{" "}
-          <span>computer systems</span> in the{" "}
-          <span>faculty of informatics</span> of the{" "}
-          <span>National University of La Plata</span>
+        <div>Alberdi</div>
+      </section>
+      <section className="div2">
+        <div className="row icon_transition_first_row mult">
+          <TextTransition springConfig={presets.gentle} className="icon">
+            {icons_1[index1 % icons_1.length]}
+          </TextTransition>
+          <TextTransition springConfig={presets.gentle} className="icon">
+            {icons_2[index2 % icons_2.length]}
+          </TextTransition>
         </div>
-        <div className="textHidden">
-          Studied a <span>bachelor's degree </span>in{" "}
-          <span>computer systems</span> in the{" "}
-          <span>faculty of informatics</span> of the{" "}
-          <span>National University of La Plata</span>
+        <div className="row text_transition_container">
+          <TextTransition springConfig={presets.gentle}>
+            {i18n.language === "en"
+              ? texts_en[index % texts_en.length]
+              : texts_es[index % texts_es.length]}
+          </TextTransition>
+        </div>
+        <div className="row icon_transition_second_row mult">
+          <TextTransition springConfig={presets.gentle} className="icon">
+            {icons_3[index3 % icons_3.length]}
+          </TextTransition>
+          <TextTransition springConfig={presets.gentle} className="icon">
+            {icons_4[index4 % icons_4.length]}
+          </TextTransition>
         </div>
       </section>
-      <section>
-        <div className="year">2022 - 2023</div>
-        <div className="stack">
-          <span>
-            <IoLogoJavascript className="div3" />
-            <FaHtml5 className="div4" />
-            <FaCss3 className="div5" />
-            <FaSass className="div6" />
-            <FaJava className="div2" />
-            <FaGitAlt />
-          </span>
-        </div>
-        <div className="text">
-          I graduated as a{" "}
-          <Link
-            to="https://www.digitalhouse.com/ar/productos/programacion/certified-tech-developer"
-            target="_blank"
-          >
-            Certified Tech Developer
-          </Link>
-          , a degree backed by Globant and Mercado Libre. <br />
-          Thanks to this, I obtained knowledge in the following fields:
-          <ul>
-            <li>
-              <span>FrontEnd</span> Development
-            </li>
-            <li>
-              <span>BackEnd</span> Development
-            </li>
-            <li>
-              <span>Database</span> Adminstration
-            </li>
-            <li>
-              <span>Git</span> and <span>Bash Scripting</span>
-            </li>
-          </ul>
-        </div>
-        <div className="textHidden">
-          I graduated as a{" "}
-          <Link
-            to="https://www.digitalhouse.com/ar/productos/programacion/certified-tech-developer"
-            target="_blank"
-          >
-            Certified Tech Developer
-          </Link>
-          , a degree backed by Globant and Mercado Libre. <br />
-          Thanks to this, I obtained knowledge in the following fields:
-          <ul>
-            <li>
-              <span>FrontEnd</span> Development
-            </li>
-            <li>
-              <span>BackEnd</span> Development
-            </li>
-            <li>
-              <span>Database</span> Adminstration
-            </li>
-            <li>
-              <span>Git</span> and <span>Bash Scripting</span>
-            </li>
-          </ul>
-        </div>
-      </section>
-      <section>
-        <div className="year">2023 - 2024</div>
-        <div className="stack">
-          <span>
-            <FaReact className="div1" />
-            <FaJava className="div2" />
-            <FaGolang />
-          </span>
-        </div>
-        <div className="text">
-          I finished my <span>Backend Specialization</span>, gaining knowledge
-          and experience in:
-          <ul>
-            <li>
-              <span>Microservices</span> based backend architecture
-            </li>
-            <li>
-              Security: <span>Authentification</span> and{" "}
-              <span>authorization</span>
-            </li>
-            <li>
-              <span>Non-relational Database</span> administration
-            </li>
-            <li>
-              <span>Testing</span>: Selenium and RestAssured
-            </li>
-            <li>
-              Infrastructure as Code: <span>Docker</span> and{" "}
-              <span>Kubernetes</span>
-            </li>
-            <li>
-              <span>Go</span> Backend
-            </li>
-          </ul>
-        </div>
-        {/* Hacky but it works 👍 */}
-        <div className="textHidden">
-          I finished my <span>Backend Specialization</span>, gaining knowledge
-          and experience in:
-          <ul>
-            <li>
-              <span>Microservices</span> based backend architecture
-            </li>
-            <li>
-              Security: <span>Authentification</span> and{" "}
-              <span>authorization</span>
-            </li>
-            <li>
-              <span>Non-relational Database</span> administration
-            </li>
-            <li>
-              <span>Testing</span>: Selenium and RestAssured
-            </li>
-            <li>
-              Infrastructure as Code: <span>Docker</span> and{" "}
-              <span>Kubernetes</span>
-            </li>
-            <li>
-              <span>Go</span> Backend
-            </li>
-          </ul>
-        </div>
-      </section>
+      <section className="div3"></section>
     </div>
   );
 };
