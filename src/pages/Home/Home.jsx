@@ -1,166 +1,69 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import {
-  FaReact,
-  FaJava,
-  FaHtml5,
-  FaCss3,
-  FaSass,
-  FaGitAlt,
-} from "react-icons/fa";
-import { IoLogoJavascript } from "react-icons/io5";
-import { GoFileBinary } from "react-icons/go";
-import { FaGolang } from "react-icons/fa6";
+import { useTranslation, Trans } from "react-i18next";
 
 const Home = () => {
+  const { t, i18n } = useTranslation();
+  const Español = i18n.language === "es";
+
   return (
     <div className="RightPanel Home">
-      <section>
-        <div className="year">2020 - 2022</div>
-        <div className="stack">
-          <span>
-            <FaJava className="div2" />
-            <GoFileBinary />
-          </span>
-        </div>
-        <div className="text">
-          Studied a <span>bachelor's degree </span>in{" "}
-          <span>computer systems</span> in the{" "}
-          <span>faculty of informatics</span> of the{" "}
-          <span>National University of La Plata</span>
-        </div>
-        <div className="textHidden">
-          Studied a <span>bachelor's degree </span>in{" "}
-          <span>computer systems</span> in the{" "}
-          <span>faculty of informatics</span> of the{" "}
-          <span>National University of La Plata</span>
-        </div>
+      <section className="div1">
+        {Español ? (
+          <p>
+            Nacido en 2001 en <span>La Plata</span>, Argentina. <br />
+            Con el tiempo, he adquirido un conjunto diverso de habilidades
+            <span> técnicas y sociales </span> que estoy seguro contribuirán a
+            mi desarrollo como profesional en este campo.
+          </p>
+        ) : (
+          <p>
+            Born in 2001 in <span>La Plata</span>, Argentina. <br />
+            Over the years, I have acquired a diverse set of
+            <span> technical and soft skills</span> that I am confident will
+            contribute to my development as a professional in the field.
+          </p>
+        )}
       </section>
-      <section>
-        <div className="year">2022 - 2023</div>
-        <div className="stack">
-          <span>
-            <IoLogoJavascript className="div3" />
-            <FaHtml5 className="div4" />
-            <FaCss3 className="div5" />
-            <FaSass className="div6" />
-            <FaJava className="div2" />
-            <FaGitAlt />
-          </span>
-        </div>
-        <div className="text">
-          I graduated as a{" "}
-          <Link
-            to="https://www.digitalhouse.com/ar/productos/programacion/certified-tech-developer"
-            target="_blank"
-          >
-            Certified Tech Developer
-          </Link>
-          , a degree backed by Globant and Mercado Libre. <br />
-          Thanks to this, I obtained knowledge in the following fields:
+      <section className="div2">
+        {Español ? (
           <ul>
+            <li>De 2020 a 2023, cursé la <span>Licenciatura en Sistemas Informáticos</span> en la Facultad de Informática de la Universidad Nacional de La Plata.</li>
             <li>
-              <span>FrontEnd</span> Development
+              En 2023, me gradué como{" "}
+              <Link
+                to="https://www.digitalhouse.com/ar/productos/programacion/certified-tech-developer"
+                target="_blank"
+              >
+                Certified Tech Developer
+              </Link>{" "}
+              en Digital House, una carrera respaldada por Globant y Mercado
+              Libre.
             </li>
             <li>
-              <span>BackEnd</span> Development
-            </li>
-            <li>
-              <span>Database</span> Adminstration
-            </li>
-            <li>
-              <span>Git</span> and <span>Bash Scripting</span>
+              En 2024, finalicé mis estudios en Digital House obteniendo la
+              certificación de <span>Especialista en Backend</span>.
             </li>
           </ul>
-        </div>
-        <div className="textHidden">
-          I graduated as a{" "}
-          <Link
-            to="https://www.digitalhouse.com/ar/productos/programacion/certified-tech-developer"
-            target="_blank"
-          >
-            Certified Tech Developer
-          </Link>
-          , a degree backed by Globant and Mercado Libre. <br />
-          Thanks to this, I obtained knowledge in the following fields:
+        ) : (
           <ul>
+            <li>From 2020 to 2023, I pursued a <span>Bachelor's degree in Computer Systems</span> in the Faculty of Informatics of the National University of La Plata.</li>
             <li>
-              <span>FrontEnd</span> Development
+              In 2023, I graduated as a{" "}
+              <Link
+                to="https://www.digitalhouse.com/ar/productos/programacion/certified-tech-developer"
+                target="_blank"
+              >
+                Certified Tech Developer
+              </Link>{" "}
+              in Digital House, a degree backed by Globant and Mercado Libre.{" "}
             </li>
             <li>
-              <span>BackEnd</span> Development
-            </li>
-            <li>
-              <span>Database</span> Adminstration
-            </li>
-            <li>
-              <span>Git</span> and <span>Bash Scripting</span>
+              In 2024, I concluded my studies at Digital House by earning the{" "}
+              <span>Backend Specialist</span> certification.
             </li>
           </ul>
-        </div>
-      </section>
-      <section>
-        <div className="year">2023 - 2024</div>
-        <div className="stack">
-          <span>
-            <FaReact className="div1" />
-            <FaJava className="div2" />
-            <FaGolang />
-          </span>
-        </div>
-        <div className="text">
-          I finished my <span>Backend Specialization</span>, gaining knowledge
-          and experience in:
-          <ul>
-            <li>
-              <span>Microservices</span> based backend architecture
-            </li>
-            <li>
-              Security: <span>Authentification</span> and{" "}
-              <span>authorization</span>
-            </li>
-            <li>
-              <span>Non-relational Database</span> administration
-            </li>
-            <li>
-              <span>Testing</span>: Selenium and RestAssured
-            </li>
-            <li>
-              Infrastructure as Code: <span>Docker</span> and{" "}
-              <span>Kubernetes</span>
-            </li>
-            <li>
-              <span>Go</span> Backend
-            </li>
-          </ul>
-        </div>
-        {/* Hacky but it works 👍 */}
-        <div className="textHidden">
-          I finished my <span>Backend Specialization</span>, gaining knowledge
-          and experience in:
-          <ul>
-            <li>
-              <span>Microservices</span> based backend architecture
-            </li>
-            <li>
-              Security: <span>Authentification</span> and{" "}
-              <span>authorization</span>
-            </li>
-            <li>
-              <span>Non-relational Database</span> administration
-            </li>
-            <li>
-              <span>Testing</span>: Selenium and RestAssured
-            </li>
-            <li>
-              Infrastructure as Code: <span>Docker</span> and{" "}
-              <span>Kubernetes</span>
-            </li>
-            <li>
-              <span>Go</span> Backend
-            </li>
-          </ul>
-        </div>
+        )}
       </section>
     </div>
   );
