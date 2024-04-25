@@ -4,26 +4,24 @@ div.Home {
   width: 75%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-column-gap: 1em;
-row-gap: 1em;
+  grid-template-rows: repeat(2, 1fr);
+  column-gap: 1em;
+  row-gap: 1em;
   section {
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     &.div1 {
       grid-area: 1 / 1 / 2 / 2;
-      @include var.flex-container(column, center, center);
+      width: 100%;
+      @include var.flex-container(row, center, center);
       div {
-        @include var.flex-container(row, unset, flex-end);
         font-size: 4.5vw;
         font-weight: 300;
-        &:nth-child(1) {
-          img {
-            width: 7.5vw;
-            height: 7.5vw;
-            margin-right: 2.5%;
-          }
-        }
+      }
+      img {
+        width: 9vw;
+        height: 9vw;
+        margin-right: 2.5%;
       }
     }
     &.div2 {
@@ -32,14 +30,14 @@ row-gap: 1em;
       div.row {
         width: 100%;
         font-size: 2.5em;
-        @include var.flex-container(row,center,center);
+        @include var.flex-container(row, center, center);
       }
       div.mult {
         @include var.flex-container(row, space-evenly, center);
         height: 100%;
       }
       .icon {
-        @include var.flex-container(row,center,center);
+        @include var.flex-container(row, center, center);
         width: 5vw;
         height: 5vw !important;
         border-radius: 5px;

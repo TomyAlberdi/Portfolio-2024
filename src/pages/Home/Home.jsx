@@ -76,11 +76,8 @@ const Home = () => {
   return (
     <div className="RightPanel Home">
       <section className="div1">
-        <div>
-          <img src="public/favicon.ico" />
-          omás
-        </div>
-        <div>Alberdi</div>
+        <img src="public/favicon.ico" />
+        <div>Tomás <br /> Alberdi</div>
       </section>
       <section className="div2">
         <div className="row icon_transition_first_row mult">
