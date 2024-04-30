@@ -5,13 +5,9 @@ div.cardFlip_container {
     width: 27.5vw;
     height: 70vh;
     div.react-card-flipper {
-      border-radius: 5px;
-      flex-shrink: 0;
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 0.75fr 0.5fr 3fr 2fr 0.75fr;
       div.react-card-back {
         div.card_back {
+          border-radius: 5px;
           box-shadow: 1px 7px 15px 6px rgba(0, 0, 0, 0.56);
           width: 27.5vw;
           height: 70vh;
@@ -147,6 +143,8 @@ div.cardFlip_container {
           box-shadow: 1px 7px 15px 6px rgba(0, 0, 0, 0.56);
           width: 27.5vw;
           height: 70vh;
+          border-radius: 5px;
+          font-size: 1.5vw;
         }
       }
     }

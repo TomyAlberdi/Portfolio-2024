@@ -18,13 +18,13 @@ const ExperienceCard = ({ data }) => {
 
   return (
     <div className="cardFlip_container" onClick={handleClick}>
-      <ReactCardFlip
-        isFlipped={Flipped}
-        flipDirection="vertical"
-        style={{ backgroundColor: bkgColor }}
-      >
-        <div className="card_front">ey</div>
-        <div className="card_back">
+      <ReactCardFlip isFlipped={Flipped} flipDirection="vertical">
+        <div className="card_front"
+        style={{background: `linear-gradient(${data.bkg_color}, ${data.accent_color})`}}
+        >
+          <h2>{en ? data.name_en : data.name_es}</h2>
+        </div>
+        <div className="card_back" style={{ backgroundColor: bkgColor }}>
           <CardTitle
             name={en ? data.name_en : data.name_es}
             year={data.year}
@@ -34,7 +34,9 @@ const ExperienceCard = ({ data }) => {
           <section className="position">
             {en ? data.role_en : data.role_es}
           </section>
-          <section className="description">{en ? data.description_en : data.description_es}</section>
+          <section className="description">
+            {en ? data.description_en : data.description_es}
+          </section>
           <section className="stack">
             <h4 style={{ borderBottom: `1px solid ${accentColor}` }}>
               Tech Stack
