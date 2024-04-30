@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import CardTitle from "./components/CardTitle";
-import CardDescriptionImages from "./components/CardDescriptionImages";
 import TechTile from "./components/TechTile";
+import ReactCardFlip from "react-card-flip";
 
 const ExperienceCard = ({ data }) => {
   const { t, i18n } = useTranslation();
@@ -10,39 +10,56 @@ const ExperienceCard = ({ data }) => {
   let bkgColor = data.bkg_color;
   let accentColor = data.accent_color;
 
+  const [Flipped, setFlipped] = useState(false);
+
+  const handleClick = () => {
+    setFlipped(!Flipped);
+  };
+
   return (
-    <div className="ExperienceCard" style={{ backgroundColor: bkgColor }}>
-      <CardTitle
-        name={en ? data.name_en : data.name_es}
-        year={data.year}
-        wip={data.wip}
-        accentColor={accentColor}
-      />
-      <section className="position div2">
-        {en ? data.role_en : data.role_es}
-      </section>
-      <CardDescriptionImages
-        description={en ? data.description_en : data.description_es}
-        images={data.images}
-        accentColor={accentColor}
-      />
-      <section className="stack div4">
-        <h4 style={{ borderBottom: `1px solid ${accentColor}` }}>Tech Stack</h4>
-        <div className="stack_list">
-          {data.icons.map((item, index) => {
-            return <TechTile key={index} name={item.name} icon={item.icon} />;
-          })}
+    <div className="cardFlip_container" onClick={handleClick}>
+      <ReactCardFlip isFlipped={Flipped} flipDirection="vertical">
+        <div className="card_front"
+        style={{background: `linear-gradient(${data.bkg_color}, ${data.accent_color})`}}
+        >
+          <h2>{en ? data.name_en : data.name_es}</h2>
         </div>
-      </section>
-      <section className="link div5">
-        {data.link ? (
-          <a href={data.link}>{t("ExperienceCardVisit")}</a>
-        ) : (
-          <a onClick={(e) => e.preventDefault()} className="disabled">
-            {t("ExperienceCardButtonDisabled")}
-          </a>
-        )}
-      </section>
+        <div className="card_back" style={{ backgroundColor: bkgColor }}>
+          <CardTitle
+            name={en ? data.name_en : data.name_es}
+            year={data.year}
+            wip={data.wip}
+            accentColor={accentColor}
+          />
+          <section className="position">
+            {en ? data.role_en : data.role_es}
+          </section>
+          <section className="description">
+            {en ? data.description_en : data.description_es}
+          </section>
+          <section className="stack">
+            <h4 style={{ borderBottom: `1px solid ${accentColor}` }}>
+              Tech Stack
+            </h4>
+            <div className="stack_list">
+              {data.icons.map((item, index) => {
+                return (
+                  <TechTile key={index} name={item.name} icon={item.icon} />
+                );
+              })}
+            </div>
+          </section>
+          <section className="link">
+            {data.link ? (
+              <a href={data.link}>{t("ExperienceCardVisit")}</a>
+            ) : (
+              <a onClick={(e) => e.preventDefault()} className="disabled">
+                {t("ExperienceCardButtonDisabled")}
+              </a>
+            )}
+          </section>
+        </div>
+      </ReactCardFlip>
     </div>
   );
 };

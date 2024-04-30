@@ -6,7 +6,7 @@ const CardTitle = ({ name, year, wip, accentColor }) => {
   const [OpenWipInfo, setOpenWipInfo] = useState(false);
 
   return (
-    <section className="title div1">
+    <section className="title">
       <div className="title_info">
         <h3 style={{borderBottom: `1px solid ${accentColor}`}}>{name}</h3>
         <span>({year})</span>
