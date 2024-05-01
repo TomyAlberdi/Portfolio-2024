@@ -14,6 +14,7 @@ export const resources = {
       ExperienceCardButtonDisabled: "Deploy not available",
       // Projects
       // Contact
+      CopiedMessage: "Copied!",
     },
   },
   es: {
@@ -31,6 +32,7 @@ export const resources = {
       ExperienceCardButtonDisabled: "Página no disponible",
       // Projects
       // Contact
+      CopiedMessage: "Copiado!",
     },
   },
 };

@@ -1,0 +1,52 @@
+@use "../../var";
+
+div.Contact {
+  width: 75%;
+  @include var.flex-container(row, center, center);
+  flex-wrap: wrap;
+  div.icon {
+    @include var.flex-container(column, center, center);
+    article, a {
+      box-shadow:  4px 6px 10px 3px rgb(0, 0, 0, 0.2);
+      width: 35%;
+      cursor: pointer;
+      height: 35%;
+      border-radius: 5px;
+      background-color: rgba(0,0,0,0.5);
+      color: var.$text;
+      text-decoration: none;
+      @include var.flex-container(column, center, center);
+      gap: 7.5%;
+      svg {
+        font-size: 4vw;
+      }
+      span {
+        @include var.flex-container(row,center, center);
+        width: 100%;
+        font-size: 1vw;
+        gap: 5%;
+        svg {
+          font-size: 1vw;
+        }
+      }
+      transition: 0.3s ease-in all;
+      &:hover {
+        transition: 0.3s ease-in all;
+        transform: scale(1.075);
+      }
+      &.copied {
+        background-color: rgb(40, 107, 40);
+      }
+    }
+    width: 33.3%;
+    height: 50%;
+    span {
+      @include var.flex-container(row, space-evenly, center);
+    }
+  }
+  form {
+    border: 1px solid red;
+    width: 100%;
+    height: 50%;
+  }
+}
