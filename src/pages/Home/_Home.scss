@@ -46,10 +46,11 @@ div.Home {
   @media (max-width: 1024px) {
     @include var.flex-container(column, center, center);
     padding-top: 5%;
+    gap: 0;
     section {
       width: 90%;
       &.div1 {
-        margin-bottom: 0;
+        margin-bottom: 5%;
       }
     }
   }
