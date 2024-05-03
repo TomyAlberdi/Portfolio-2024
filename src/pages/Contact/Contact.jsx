@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { FaGithub, FaLinkedinIn, FaLink, FaCheck } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaFileCircleCheck } from "react-icons/fa6";
+import ContactForm from './../../components/ContactForm/ContactForm';
 
 const Contact = () => {
   const { t, i18n } = useTranslation();
@@ -75,7 +76,7 @@ const Contact = () => {
           </span>
         </article>
       </div>
-      <form>form</form>
+      <ContactForm />
     </div>
   );
 };

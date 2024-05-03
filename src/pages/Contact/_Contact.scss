@@ -2,7 +2,7 @@
 
 div.Contact {
   width: 75%;
-  @include var.flex-container(row, center, center);
+  @include var.flex-container(row, flex-start, flex-start);
   flex-wrap: wrap;
   div.icon {
     @include var.flex-container(column, center, center);
@@ -43,11 +43,5 @@ div.Contact {
     span {
       @include var.flex-container(row, space-evenly, center);
     }
-  }
-  form {
-    display: none;
-    border: 1px solid red;
-    width: 100%;
-    height: 50%;
   }
 }

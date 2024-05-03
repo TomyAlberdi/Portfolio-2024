@@ -15,6 +15,10 @@ export const resources = {
       // Projects
       // Contact
       CopiedMessage: "Copied!",
+      ContactName: "Name",
+      ContactEmail: "Email",
+      ContactMessage: "Message",
+      ContactSubmit: "Send",
     },
   },
   es: {
@@ -33,6 +37,10 @@ export const resources = {
       // Projects
       // Contact
       CopiedMessage: "Copiado!",
+      ContactName: "Nombre",
+      ContactEmail: "Email",
+      ContactMessage: "Mensaje",
+      ContactSubmit: "Enviar",
     },
   },
 };
