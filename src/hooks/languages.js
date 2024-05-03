@@ -14,6 +14,17 @@ export const resources = {
       ExperienceCardButtonDisabled: "Deploy not available",
       // Projects
       // Contact
+      CopiedMessage: "Copied!",
+      ContactName: "Name",
+      ContactEmail: "Email",
+      ContactMessage: "Message",
+      ContactSubmit: "Send",
+      ContactErrorName: "The name can't be empty.",
+      ContactWarnEmail: "Please, make sure the email is valid.",
+      ContactErrorEmail: "The email can't be empty.",
+      ContactErrorMessage: "The message can't be empty.",
+      ContactGenericError: "An error has occured. Please try again.",
+      ContactSuccess: "Your message has been successfully sent.",
     },
   },
   es: {
@@ -31,6 +42,17 @@ export const resources = {
       ExperienceCardButtonDisabled: "Página no disponible",
       // Projects
       // Contact
+      CopiedMessage: "Copiado!",
+      ContactName: "Nombre",
+      ContactEmail: "Email",
+      ContactMessage: "Mensaje",
+      ContactSubmit: "Enviar",
+      ContactErrorName: "El nombre no puede estar vacío.",
+      ContactWarnEmail: "Por favor, asegúrese de que el email sea válido.",
+      ContactErrorEmail: "El email no puede estar vacío.",
+      ContactErrorMessage: "El mensaje no puede estar vacío.",
+      ContactGenericError: "Ocurrió un error. Por favor, vuelva a intentarlo.",
+      ContactSuccess: "Su mensaje fue enviado correctamente.",
     },
   },
 };
