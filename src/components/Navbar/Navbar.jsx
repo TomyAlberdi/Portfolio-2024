@@ -9,7 +9,7 @@ const Navbar = () => {
     <div className="Navbar">
       <section className="top">
         <section className="header">
-          <img src="public/favicon.ico" alt="Tomás Alberdi Icon" />
+          <img src="favicon.ico" alt="Tomás Alberdi Icon" />
           <div>
             <h2>Tomás Alberdi</h2>
             <h4>{t("FullStackDeveloper")}</h4>
@@ -74,7 +74,7 @@ const Navbar = () => {
             />
           </svg>
         ) : (
-          <img src="public/usa-flag.png" alt="USA Flag" />
+          <img src="usa-flag.png" alt="USA Flag" />
         )}
         {i18n.language === "es" ? <span> Español</span> : <span> English</span>}
       </section>
