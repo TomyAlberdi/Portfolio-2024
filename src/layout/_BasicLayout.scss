@@ -24,11 +24,11 @@ div.Layout {
     @include var.flex-container(column, unset, unset);
     padding: 0;
     height: unset;
+    min-height: 110dvh;
     div.RightPanel {
       max-width: 100%;
       width: 100%;
       overflow: unset;
-      padding-top: 12vh;
     }
   }
 }

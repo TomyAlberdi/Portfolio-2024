@@ -42,4 +42,15 @@ div.Home {
       transform: scale(1.05);
     }
   }
+  /* Query Mobile */
+  @media (max-width: 1024px) {
+    @include var.flex-container(column, center, center);
+    padding-top: 5%;
+    section {
+      width: 90%;
+      &.div1 {
+        margin-bottom: 0;
+      }
+    }
+  }
 }
