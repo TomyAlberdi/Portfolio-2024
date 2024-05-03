@@ -1,11 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import "./App.scss";
+import CustomRouter from './routes';
+import Welcome from './components/Welcome/Welcome';
 
 function App() {
-  const [count, setCount] = useState(0);
+
+  const [Loading, setLoading] = useState(true)
+  useEffect(() => {
+      setTimeout(() => {
+          setLoading(false)
+      }, 3000);
+  }, [])
 
   return (
     <div className="App">
-      eyo
+      <Welcome Loading={Loading} />
+      <CustomRouter />
     </div>
   );
 }

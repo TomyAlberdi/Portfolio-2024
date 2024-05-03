@@ -1,0 +1,45 @@
+@use "../../var";
+
+div.Home {
+  width: 75%;
+  @include var.flex-container(row, center, center);
+  gap: 2.5%;
+  section {
+    background-color: rgba(0, 0, 0, 0.35);
+    border-radius: 10px;
+    box-shadow: var.$shadow;
+    padding: 2%;
+    width: 40%;
+    font-size: 1.1em;
+    line-height: 1.75em;
+    a {
+      text-decoration: none;
+      color: var.$accent;
+      font-size: 1.5rem;
+    }
+    ul {
+      list-style-type: none;
+      li {
+        padding: 2.5% 0;
+        &::before {
+          content: "\25A0";
+          color: var.$accent;
+          font-weight: bold;
+          display: inline-block;
+          width: 1em;
+        }
+      }
+    }
+    span {
+      color: var.$accent;
+    }
+    &.div1 {
+      margin-bottom: 30%;
+    }
+    transition: 0.3s ease-in-out all;
+    &:hover {
+      transition: 0.3s ease-in-out all;
+      transform: scale(1.05);
+    }
+  }
+}

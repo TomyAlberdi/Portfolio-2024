@@ -1,0 +1,31 @@
+@use "../var";
+
+div.Layout {
+  @include var.flex-container(row, space-between, start);
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(50px);
+  padding: 1.5em 0 1.5em 1.5em;
+  div.RightPanel {
+    height: 100%;
+    max-width: 80%;
+    overflow: scroll;
+    animation: fade-in 2s;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    h1.title {
+      font-size: 4rem;
+      font-family: 'BebasNeue-Regular';
+    }
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+  }
+}
