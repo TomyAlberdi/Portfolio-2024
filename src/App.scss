@@ -66,6 +66,18 @@ div.App {
   /* Query Mobile */
   @media (max-width: 1024px) {
     height: unset;
+    background-size: cover;
+    background-position: top 50% right 50%;
+    background-repeat: no-repeat;
+    div.Welcome {
+      @include var.flex-container(row,center,center);
+      h1 {
+        @include var.flex-container(column,center,center);
+      }
+      top: 0;
+      width: 100dvw;
+      height: 120dvh;
+    }
   }
 }
 
