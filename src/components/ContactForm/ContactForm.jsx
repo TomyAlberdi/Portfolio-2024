@@ -1,51 +1,94 @@
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { useTranslation } from "react-i18next";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ContactForm = () => {
-  const { t, i18n } = useTranslation();
-
-  const en_template_id = "template_4g5wytf";
-  const es_template_id = "template_95ysoxi";
+  const { t } = useTranslation();
 
   const form = useRef();
+
+  const validateEmail = (email) => {
+    return email
+      .toLowerCase()
+      .match(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      );
+  };
+
+  const clearFields = () => {
+    document.querySelector("[name='from_name']").value = ""
+    document.querySelector("[name='from_email']").value = ""
+    document.querySelector("[name='message']").value = ""
+  }
+
+  const check = () => {
+    let nameValue = document.querySelector("[name='from_name']").value;
+    let emailValue = document.querySelector("[name='from_email']").value;
+    let messageValue = document.querySelector("[name='message']").value;
+    if (!nameValue) {
+      toast.warn(t("ContactErrorName"))
+      return false;
+    }
+    if (!emailValue) {
+      toast.warn(t("ContactErrorEmail"))
+      return false
+    }
+    if (!validateEmail(emailValue)) {
+      toast.warn(t("ContactWarnEmail"))
+      return false
+    }
+    if (!messageValue) {
+      toast.warn(t("ContactErrorMessage"))
+      return false
+    }
+    return true;
+  };
+
+  const failed = () => {
+    toast.error(t("ContactGenericError"))
+  };
+
+  const success = () => {
+    toast.success(t("ContactSuccess"))
+    clearFields()
+  };
 
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm(
-        "service_65stqaj",
-        i18n.language == "en" ? en_template_id : es_template_id,
-        form.current,
-        {
+    if (check()) {
+      emailjs
+        .sendForm("service_65stqaj", "template_6iqcubj", form.current, {
           publicKey: "ASH07AAw_9d6qTiqG",
-        }
-      )
-      .then(console.log("SUCCESS!"))
-      .catch((error) => {
-        console.log("FAILED...", error.text);
-      });
+        })
+        .then(success())
+        .catch(error => failed());
+    }
   };
 
   return (
-    <form className="ContactForm" ref={form} onSubmit={sendEmail}>
-      <label className="div1">
-        {t("ContactName")}
-        <input type="text" name="contactName" />
-      </label>
-      <label className="div2">
-        {t("ContactEmail")}
-        <input type="email" name="contactEmail" />
-      </label>
-      <label className="div3">
-        {t("ContactMessage")}
-        <textarea name="contactMessage"></textarea>
-      </label>
-      <div className="div4">
-        <button type="submit">{t("ContactSubmit")}</button>
-      </div>
-    </form>
+    <>
+      <ToastContainer />
+      <form className="ContactForm" ref={form} onSubmit={sendEmail}>
+        <label className="div1">
+          {t("ContactName")}
+          <input type="text" name="from_name" />
+        </label>
+        <label className="div2">
+          {t("ContactEmail")}
+          <input type="text" name="from_email" />
+        </label>
+        <label className="div3">
+          {t("ContactMessage")}
+          <textarea name="message"></textarea>
+        </label>
+        <div className="div4">
+          <button type="submit">{t("ContactSubmit")}</button>
+        </div>
+      </form>
+    </>
   );
 };
 
