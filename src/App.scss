@@ -76,6 +76,8 @@ div.App {
       @include var.flex-container(row,center,center);
       h1 {
         @include var.flex-container(column,center,center);
+        width: 80%;
+        text-align: center;
       }
       top: 0;
       width: 100dvw;

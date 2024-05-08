@@ -7,9 +7,6 @@ const MobileNavbar = () => {
       <section className="openMenu">
         <RxHamburgerMenu />
       </section>
-      <section>
-        <img src="favicon.ico" alt="Tomás Alberdi Icon" />
-      </section>
     </div>
   )
 }

@@ -5,27 +5,20 @@ div.MobileNavbar {
   /* Query Mobile */
   @media (max-width: 1024px) {
     display: block;
-    height: 12vh;
-    position: sticky;
-    width: 100%;
-    top: 0;
-    background-color: rgba(0,0,0,0.2);
-    backdrop-filter: blur(5px);
-    @include var.flex-container(row, space-between, center);
-    section {
-      height: 100%;
-      width: 12vh;
+    position: absolute;
+    z-index: 1000;
+    bottom: 30px;
+    right: 30px;
+    section.openMenu {
+      width: 20vw;
+      height: 20vw;
+      border-radius: 100px;
       @include var.flex-container(row,center,center);
-      &.openMenu {
-        width: 14vh;
-        svg {
-          height: 100%;
-          width: 100%;
-        }
-      }
-      img {
-        width: 90%;
-        height: 90%;
+      backdrop-filter: blur(5px);
+      background-color: rgba(138, 22, 49, 0.7);
+      box-shadow: 3px 7px 15px 8px rgba(0,0,0,0.75);
+      svg {
+        font-size: 2em;
       }
     }
   }
