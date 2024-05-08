@@ -63,6 +63,9 @@ div.App {
       }
     }
   }
+  &.loading {
+    touch-action: none;
+  }
   /* Query Mobile */
   @media (max-width: 1024px) {
     height: unset;
@@ -76,7 +79,7 @@ div.App {
       }
       top: 0;
       width: 100dvw;
-      height: 120dvh;
+      height: 100dvh;
     }
   }
 }
