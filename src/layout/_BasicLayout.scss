@@ -24,7 +24,7 @@ div.Layout {
     @include var.flex-container(column, unset, unset);
     padding: 0;
     height: unset;
-    min-height: 100dvh;
+    min-height: 100vh;
     div.RightPanel {
       max-width: 100%;
       width: 100%;
