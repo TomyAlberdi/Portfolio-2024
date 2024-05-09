@@ -7,7 +7,6 @@ div.MobileMenu {
     @include var.flex-container(column, flex-start, flex-start);
     position: fixed;
     width: 100vw;
-    right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(5px);
@@ -16,8 +15,10 @@ div.MobileMenu {
     transition: 0.5s ease-in-out all;
     height: 0;
     opacity: 0;
+    z-index: 999;
     &.open {
-      height: 60vh;
+      height: 70vh;
+      bottom: -10vh;
       opacity: 1;
       transition: 0.5s ease-in-out all;
     }

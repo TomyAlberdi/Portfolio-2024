@@ -24,6 +24,24 @@ const Home = () => {
             contribute to my development as a professional in the field.
           </p>
         )}
+                  <p>
+            Born in 2001 in <span>La Plata</span>, Argentina. <br />
+            Over the years, I have acquired a diverse set of
+            <span> technical and soft skills</span> that I am confident will
+            contribute to my development as a professional in the field.
+          </p>
+          <p>
+            Born in 2001 in <span>La Plata</span>, Argentina. <br />
+            Over the years, I have acquired a diverse set of
+            <span> technical and soft skills</span> that I am confident will
+            contribute to my development as a professional in the field.
+          </p>
+                    <p>
+            Born in 2001 in <span>La Plata</span>, Argentina. <br />
+            Over the years, I have acquired a diverse set of
+            <span> technical and soft skills</span> that I am confident will
+            contribute to my development as a professional in the field.
+          </p>
       </section>
       <section className="div2">
         {Español ? (

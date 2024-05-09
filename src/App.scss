@@ -64,7 +64,7 @@ div.App {
       }
     }
   }
-  &.loading {
+  &.loading, &.menuOpened {
     touch-action: none;
   }
   /* Query Mobile */
