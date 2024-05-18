@@ -139,13 +139,33 @@ div.cardFlip_container {
       }
       div.react-card-front {
         div.card_front {
-          @include var.flex-container(row,center,center);
+          @include var.flex-container(row, center, center);
           box-shadow: 1px 7px 15px 6px rgba(0, 0, 0, 0.56);
           width: 27.5vw;
           height: 70vh;
           border-radius: 5px;
           font-size: 1.5vw;
           cursor: pointer;
+        }
+      }
+    }
+  }
+  /* Query Mobile */
+  @media (max-width: 1024px) {
+    div.react-card-flip {
+      width: 90vw;
+      div.react-card-flipper {
+        div.react-card-back {
+          div.card_back {
+            width: 90vw;
+            box-shadow: none;
+          }
+        }
+        div.react-card-front {
+          div.card_front {
+            width: 90vw;
+            box-shadow: none;
+          }
         }
       }
     }
