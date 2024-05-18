@@ -8,6 +8,13 @@ const Home = () => {
 
   return (
     <div className="RightPanel Home">
+      <section className="div0">
+        <img src="favicon.ico" alt="Tomás Alberdi Icon" />
+        <div>
+          <h2>Tomás Alberdi</h2>
+          <h4>{t("FullStackDeveloper")}</h4>
+        </div>
+      </section>
       <section className="div1">
         {Español ? (
           <p>
@@ -24,29 +31,15 @@ const Home = () => {
             contribute to my development as a professional in the field.
           </p>
         )}
-                  <p>
-            Born in 2001 in <span>La Plata</span>, Argentina. <br />
-            Over the years, I have acquired a diverse set of
-            <span> technical and soft skills</span> that I am confident will
-            contribute to my development as a professional in the field.
-          </p>
-          <p>
-            Born in 2001 in <span>La Plata</span>, Argentina. <br />
-            Over the years, I have acquired a diverse set of
-            <span> technical and soft skills</span> that I am confident will
-            contribute to my development as a professional in the field.
-          </p>
-                    <p>
-            Born in 2001 in <span>La Plata</span>, Argentina. <br />
-            Over the years, I have acquired a diverse set of
-            <span> technical and soft skills</span> that I am confident will
-            contribute to my development as a professional in the field.
-          </p>
       </section>
       <section className="div2">
         {Español ? (
           <ul>
-            <li>De 2020 a 2023, cursé la <span>Licenciatura en Sistemas Informáticos</span> en la Facultad de Informática de la Universidad Nacional de La Plata.</li>
+            <li>
+              De 2020 a 2023, cursé la{" "}
+              <span>Licenciatura en Sistemas Informáticos</span> en la Facultad
+              de Informática de la Universidad Nacional de La Plata.
+            </li>
             <li>
               En 2023, me gradué como{" "}
               <Link
@@ -65,7 +58,11 @@ const Home = () => {
           </ul>
         ) : (
           <ul>
-            <li>From 2020 to 2023, I pursued a <span>Bachelor's degree in Computer Systems</span> in the Faculty of Informatics of the National University of La Plata.</li>
+            <li>
+              From 2020 to 2023, I pursued a{" "}
+              <span>Bachelor's degree in Computer Systems</span> in the Faculty
+              of Informatics of the National University of La Plata.
+            </li>
             <li>
               In 2023, I graduated as a{" "}
               <Link
