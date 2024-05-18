@@ -96,6 +96,7 @@ div.cardFlip_container {
                   @include var.flex-container(row, center, center);
                   background-color: rgba(0, 0, 0, 0.5);
                   border-radius: 5px;
+                  text-align: center;
                   i {
                     font-size: 5vh;
                   }
@@ -159,12 +160,40 @@ div.cardFlip_container {
           div.card_back {
             width: 90vw;
             box-shadow: none;
+            section {
+              &.title {
+                div {
+                  &.title_info {
+                    @include var.flex-container(column, center, flex-start);
+                    span {
+                      margin: 3% 0 0 0;
+                    }
+                  }
+                  &.title_wip {
+                    width: 11.5vh;
+                    section.wip_info {
+                      top: 0%;
+                      right: 10.5vh;
+                    }
+                  }
+                }
+              }
+              &.stack {
+                div.stack_list {
+                  article.TechTile {
+                    height: 80%;
+                    word-break: break-all;
+                  }
+                }
+              }
+            }
           }
         }
         div.react-card-front {
           div.card_front {
             width: 90vw;
             box-shadow: none;
+            font-size: 2.5vh;
           }
         }
       }
