@@ -4,7 +4,7 @@ div.MobileMenu {
   display: none;
   /* Query Mobile */
   @media (max-width: 1024px) {
-    @include var.flex-container(column, flex-start, flex-start);
+    @include var.flex-container(column, space-between, flex-start);
     position: fixed;
     width: 100vw;
     bottom: 0;
@@ -21,6 +21,44 @@ div.MobileMenu {
       bottom: -10vh;
       opacity: 1;
       transition: 0.5s ease-in-out all;
+    }
+    nav {
+      @include var.flex-container(column, center, center);
+      width: 100%;
+      margin-bottom: 5%;
+      a {
+        width: 100%;
+        border: 1px solid var.$secondary;
+        text-align: center;
+        padding: 6%;
+        color: var.$text;
+        text-decoration: none;
+        border-radius: 5px;
+        &:not(:last-child) {
+          margin-bottom: 4%;
+        }
+        &.active {
+          background-color: var.$secondary;
+        }
+      }
+    }
+    section.languagePanel {
+      margin-bottom: 11.5vh;
+      height: 20vw;
+      border: 1px solid var.$secondary;
+      border-radius: 5px;
+      width: 70%;
+      @include var.flex-container(row, space-around, center);
+      padding: 2.5%;
+      span {
+        font-size: 8vw;
+        font-weight: 300;
+      }
+      svg,
+      img {
+        height: 90%;
+        border-radius: 100px;
+      }
     }
   }
 }
