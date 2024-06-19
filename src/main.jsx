@@ -6,7 +6,7 @@ import i18n from "./hooks/i18n.js";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter basename="/Portfolio-2024/">
+    <BrowserRouter>
       <App />
     </BrowserRouter>
   </React.StrictMode>
