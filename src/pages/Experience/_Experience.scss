@@ -5,4 +5,25 @@ div.Experience {
   overflow-x: scroll;
   @include var.flex-container(row, flex-start, center);
   gap: 2.5%;
+  /* Query Mobile */
+  @media (max-width: 1024px) {
+    display: none;
+  }
+}
+
+swiper-container {
+  display: none;
+  /* Query Mobile */
+  @media (max-width: 1024px) {
+    display: unset;
+    width: 100vw !important;
+    padding: 5% 0;
+    swiper-slide {
+      width: 90vw !important;
+      justify-self: center;
+      align-self: center;
+      margin: 0 2.5% 2.5%;
+      @include var.flex-container(column, center, center);
+    }
+  }
 }

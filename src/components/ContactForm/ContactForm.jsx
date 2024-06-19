@@ -80,7 +80,7 @@ const ContactForm = () => {
           {t("ContactEmail")}
           <input type="text" name="from_email" />
         </label>
-        <label className="div3">
+        <label className="div3 message">
           {t("ContactMessage")}
           <textarea name="message"></textarea>
         </label>

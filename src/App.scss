@@ -7,6 +7,9 @@
 @use "./components/ExperienceCard/ExperienceCard";
 @use "./pages/Contact/Contact";
 @use "./components/ContactForm/ContactForm";
+// Mobile Imports
+@use "./mobile/Navbar/MobileNavbar";
+@use "./mobile/Menu/Menu";
 
 @import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@200;300;400;500;700&display=swap");
 
@@ -41,7 +44,7 @@ div.App {
     position: absolute;
     height: 100%;
     width: 100%;
-    z-index: 50;
+    z-index: 1000;
     @include var.flex-container(row, center, center);
     background-image: linear-gradient(
       to bottom,
@@ -59,6 +62,27 @@ div.App {
         padding-left: 1vw;
         color: var.$accent;
       }
+    }
+  }
+  &.loading, &.menuOpened {
+    touch-action: none;
+  }
+  /* Query Mobile */
+  @media (max-width: 1024px) {
+    height: unset;
+    background-size: cover;
+    background-position: top 50% right 50%;
+    background-repeat: no-repeat;
+    div.Welcome {
+      @include var.flex-container(row,center,center);
+      h1 {
+        @include var.flex-container(column,center,center);
+        width: 80%;
+        text-align: center;
+      }
+      top: 0;
+      width: 100dvw;
+      height: 100dvh;
     }
   }
 }

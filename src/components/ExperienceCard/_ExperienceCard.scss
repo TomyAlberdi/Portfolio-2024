@@ -73,6 +73,7 @@ div.cardFlip_container {
               font-size: 1.75vh;
               overflow-y: scroll;
               height: 30%;
+              line-height: 1.5;
               &::-webkit-scrollbar {
                 display: none;
               }
@@ -96,6 +97,8 @@ div.cardFlip_container {
                   @include var.flex-container(row, center, center);
                   background-color: rgba(0, 0, 0, 0.5);
                   border-radius: 5px;
+                  text-align: center;
+                  word-break: break-all;
                   i {
                     font-size: 5vh;
                   }
@@ -139,13 +142,61 @@ div.cardFlip_container {
       }
       div.react-card-front {
         div.card_front {
-          @include var.flex-container(row,center,center);
+          @include var.flex-container(row, center, center);
           box-shadow: 1px 7px 15px 6px rgba(0, 0, 0, 0.56);
           width: 27.5vw;
           height: 70vh;
           border-radius: 5px;
           font-size: 1.5vw;
           cursor: pointer;
+        }
+      }
+    }
+  }
+  /* Query Mobile */
+  @media (max-width: 1024px) {
+    div.react-card-flip {
+      width: 90vw;
+      div.react-card-flipper {
+        div.react-card-back {
+          div.card_back {
+            width: 90vw;
+            box-shadow: none;
+            section {
+              &.title {
+                div {
+                  &.title_info {
+                    @include var.flex-container(column, center, flex-start);
+                    span {
+                      margin: 3% 0 0 0;
+                    }
+                  }
+                  &.title_wip {
+                    width: 11.5vh;
+                    section.wip_info {
+                      top: 0%;
+                      right: 10.5vh;
+                    }
+                  }
+                }
+              }
+              &.stack {
+                div.stack_list {
+                  article.TechTile {
+                    height: 80%;
+                    word-break: break-all;
+                  }
+                }
+              }
+            }
+          }
+        }
+        div.react-card-front {
+          div.card_front {
+            width: 90vw;
+            box-shadow: none;
+            font-size: 2.5vh;
+          }
         }
       }
     }

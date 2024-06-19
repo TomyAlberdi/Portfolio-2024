@@ -12,11 +12,23 @@ div.Layout {
     overflow: scroll;
     animation: fade-in 2s;
     &::-webkit-scrollbar {
-        display: none;
+      display: none;
     }
     h1.title {
       font-size: 4rem;
-      font-family: 'BebasNeue-Regular';
+      font-family: "BebasNeue-Regular";
+    }
+  }
+  /* Query Mobile */
+  @media (max-width: 1024px) {
+    @include var.flex-container(column, unset, unset);
+    padding: 0;
+    height: unset;
+    min-height: 100vh;
+    div.RightPanel {
+      max-width: 100%;
+      width: 100%;
+      overflow: unset;
     }
   }
 }

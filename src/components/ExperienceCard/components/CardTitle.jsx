@@ -3,6 +3,12 @@ import { useTranslation } from "react-i18next";
 
 const CardTitle = ({ name, year, wip, accentColor }) => {
   const { t } = useTranslation();
+
+  const handleClickWipInfo = (e) => {
+    e.stopPropagation();
+    setOpenWipInfo(!OpenWipInfo)
+  }
+
   const [OpenWipInfo, setOpenWipInfo] = useState(false);
 
   return (
@@ -15,6 +21,7 @@ const CardTitle = ({ name, year, wip, accentColor }) => {
         className="title_wip"
         onMouseEnter={() => setOpenWipInfo(true)}
         onMouseLeave={() => setOpenWipInfo(false)}
+        onClick={(e) => handleClickWipInfo(e)}
       >
         {wip ? <h3>WIP</h3> : null}
         <section className={"wip_info " + (OpenWipInfo ? "open" : "")}>

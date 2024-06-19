@@ -33,6 +33,9 @@ div.Home {
     span {
       color: var.$accent;
     }
+    &.div0 {
+      display: none;
+    }
     &.div1 {
       margin-bottom: 30%;
     }
@@ -40,6 +43,41 @@ div.Home {
     &:hover {
       transition: 0.3s ease-in-out all;
       transform: scale(1.05);
+    }
+  }
+  /* Query Mobile */
+  @media (max-width: 1024px) {
+    @include var.flex-container(column, center, center);
+    padding-top: 5%;
+    gap: 0;
+    section {
+      width: 90%;
+      &.div0 {
+        @include var.flex-container(row, flex-start, center);
+        margin-bottom: 5%;
+        img {
+          width: 20%;
+        }
+        div {
+          text-align: center;
+          width: 80%;
+          h2 {
+            font-weight: 500;
+          }
+          h4 {
+            font-weight: 200;
+          }
+        }
+      }
+      &.div1 {
+        margin-bottom: 5%;
+      }
+      &.div2 {
+        margin-bottom: 25%;
+      }
+      &:hover {
+        transform: none;
+      }
     }
   }
 }
