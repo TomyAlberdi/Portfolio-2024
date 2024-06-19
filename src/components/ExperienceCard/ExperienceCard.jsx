@@ -51,7 +51,7 @@ const ExperienceCard = ({ data }) => {
           </section>
           <section className="link">
             {data.link ? (
-              <a href={data.link}>{t("ExperienceCardVisit")}</a>
+              <a href={data.link} target="_blank">{t("ExperienceCardVisit")}</a>
             ) : (
               <a onClick={(e) => e.preventDefault()} className="disabled">
                 {t("ExperienceCardButtonDisabled")}
