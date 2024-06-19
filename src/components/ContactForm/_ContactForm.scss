@@ -10,7 +10,7 @@ form.ContactForm {
   box-shadow: var.$shadow;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(2, 1fr) 2fr 1fr; 
+  grid-template-rows: repeat(2, 1fr) 2fr 1fr;
   row-gap: 4%;
   .div1 {
     grid-area: 1 / 1 / 2 / 2;
@@ -53,6 +53,30 @@ form.ContactForm {
       &:hover {
         transition: 0.3s all ease-in;
         background-color: var.$accent;
+      }
+    }
+  }
+  /* Query Mobile */
+  @media (max-width: 1024px) {
+    width: 95%;
+    margin-left: 1.5%;
+    @include var.flex-container(column, flex-start, center);
+    gap: 2vh;
+    label {
+      height: 9vh;
+      input, textarea {
+        height: 100%;
+      }
+      &.message {
+        min-height: 18vh;
+      }
+    }
+    div {
+      width: 100%;
+      button {
+        height: 9vh;
+        width: inherit;
+        font-size: 1.5rem;
       }
     }
   }

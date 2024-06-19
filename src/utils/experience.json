@@ -3,7 +3,7 @@
     "name_en": "DataTrainers Web",
     "name_es": "DataTrainers Web",
     "year": "2023 - 2024",
-    "link": "",
+    "link": "https://datatrainersllc.com/",
     "role_en": "Lead Frontend Developer",
     "role_es": "Desarrollador Frontend",
     "description_en": "Freelancer job in wich I developed an E-Commerce Web App to search, filter and buy online courses. This project includes API calls, responsive design, and accesibility options.",
@@ -24,6 +24,6 @@
         "icon": "fa-brands fa-js"
       }
     ],
-    "wip": true
+    "wip": false
   }
 ]

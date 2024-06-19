@@ -6,13 +6,14 @@ div.Contact {
   flex-wrap: wrap;
   div.icon {
     @include var.flex-container(column, center, center);
-    article, a {
-      box-shadow:  4px 6px 10px 3px rgb(0, 0, 0, 0.2);
+    article,
+    a {
+      box-shadow: 4px 6px 10px 3px rgb(0, 0, 0, 0.2);
       width: 35%;
       cursor: pointer;
       height: 35%;
       border-radius: 5px;
-      background-color: rgba(0,0,0,0.5);
+      background-color: rgba(0, 0, 0, 0.5);
       color: var.$text;
       text-decoration: none;
       @include var.flex-container(column, center, center);
@@ -21,7 +22,7 @@ div.Contact {
         font-size: 4vw;
       }
       span {
-        @include var.flex-container(row,center, center);
+        @include var.flex-container(row, center, center);
         width: 100%;
         font-size: 1vw;
         gap: 5%;
@@ -42,6 +43,25 @@ div.Contact {
     height: 50%;
     span {
       @include var.flex-container(row, space-evenly, center);
+    }
+  }
+  /* Query Mobile */
+  @media (max-width: 1024px) {
+    div.icon {
+      padding: 5% 0;
+      article, a {
+        width: 30vw;
+        height: 30vw;
+        svg {
+          font-size: 15vw;
+        }
+        span {
+          font-size: 1rem;
+          svg {
+            font-size: 1rem;
+          }
+        }
+      }
     }
   }
 }
