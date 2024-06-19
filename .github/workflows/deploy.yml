@@ -44,9 +44,6 @@ jobs:
           name: production-files
           path: ./dist
 
-      - name: Configure custom domain
-        run: echo "tomas-alberdi.online" > ./dist/CNAME
-
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
